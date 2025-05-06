@@ -14,10 +14,10 @@ import 'framework7/css/bundle';
 // Import Icons and App Custom Styles
 // New page imports
 import OpportunitiesPage from '../pages/opportunities.jsx';
-import AddNewOpportunityPage from '../pages/add-new-opportunity.jsx';
+import AddNewOpportunityPage from '../pages/add-opportunity.jsx';
 import ModifyOpportunityPage from '../pages/modify-opportunity.jsx';
 import PerformancePage from '../pages/performance.jsx';
-import MonthlyTargetDefinitionPage from '../pages/monthly-target-definition.jsx';
+import MonthlyTargetDefinitionPage from '../pages/monthly-target.jsx';
 import PerformanceReportPage from '../pages/performance-report.jsx';
 import AboutThisAppPage from '../pages/about-this-app.jsx';
 
