@@ -2,7 +2,12 @@ import React from 'react';
 import {
   Page,
   Block,
-  Navbar
+  Navbar,
+  NavLeft,
+  NavTitle,
+  NavRight,
+  NavTitleLarge,
+  Link
 } from 'framework7-react';
 
 const HomePage = () => (
@@ -20,6 +25,9 @@ const HomePage = () => (
     </Navbar>
 
     {/* Page content */}
+    <Block>
+      Hello world
+    </Block>
   </Page>
 );
 export default HomePage;
