@@ -1,12 +1,17 @@
 
 var routes = [
+  import HomePage from '../pages/home';
+  import DashboardPage from '../pages/dashboard';
+ {
+    path: '/',
+    component: DashboardPage,
+  },
   {
     path: '/login/',
     // component: LoginPage, // Assuming component will be added later
   },
   {
-    path: '/dashboard/',
-    // component: DashboardPage, // Assuming component will be added later
+    path: '/dashboard/', component: DashboardPage,
   },
   {
     path: '/opportunities/',

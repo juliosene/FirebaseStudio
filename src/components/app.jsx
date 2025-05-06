@@ -23,6 +23,7 @@ import {
   ListButton,
   BlockFooter
 } from 'framework7-react';
+import DashboardPage from '../pages/dashboard';
 import cordovaApp from '../js/cordova-app';
 
 import routes from '../js/routes';
