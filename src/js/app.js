@@ -1,11 +1,12 @@
-// Import Vue
-import { createApp } from 'vue';
+// Import React and ReactDOM
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 
 // Import Framework7
 import Framework7 from 'framework7/lite-bundle';
 
-// Import Framework7-Vue Plugin
-import Framework7Vue, { registerComponents } from 'framework7-vue/bundle';
+// Import Framework7-React Plugin
+import Framework7React from 'framework7-react';
 
 // Import Framework7 Styles
 import 'framework7/css/bundle';
@@ -15,16 +16,11 @@ import '../css/icons.css';
 import '../css/app.css';
 
 // Import App Component
-import App from '../components/app.vue';
+import App from '../components/app.jsx';
 
-// Init Framework7-Vue Plugin
-Framework7.use(Framework7Vue);
+// Init F7 React Plugin
+Framework7.use(Framework7React)
 
-// Init App
-const app = createApp(App);
-
-// Register Framework7 Vue components
-registerComponents(app);
-
-// Mount the app
-app.mount('#app');
+// Mount React App
+const root = createRoot(document.getElementById('app'));
+root.render(React.createElement(App));

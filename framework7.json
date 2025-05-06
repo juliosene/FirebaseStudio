@@ -4,14 +4,14 @@
     "pwa",
     "cordova"
   ],
-  "name": "Firebase 7",
-  "framework": "vue",
+  "name": "Firebase7",
+  "framework": "react",
   "template": "tabs",
   "bundler": "vite",
   "cssPreProcessor": false,
   "theming": {
     "customColor": true,
-    "color": "#32803a",
+    "color": "#294516",
     "darkMode": true,
     "iconFonts": true
   },

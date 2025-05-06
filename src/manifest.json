@@ -1,12 +1,12 @@
 {
-  "name": "Firebase 7",
-  "short_name": "Firebase 7",
-  "description": "Firebase 7",
+  "name": "Firebase7",
+  "short_name": "Firebase7",
+  "description": "Firebase7",
   "lang": "en-US",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#32803a",
-  "theme_color": "#32803a",
+  "background_color": "#294516",
+  "theme_color": "#294516",
   "icons": [
     {
       "src": "/icons/128x128.png",

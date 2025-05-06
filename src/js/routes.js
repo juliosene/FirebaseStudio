@@ -1,14 +1,14 @@
 
-import HomePage from '../pages/home.vue';
-import AboutPage from '../pages/about.vue';
-import FormPage from '../pages/form.vue';
-import CatalogPage from '../pages/catalog.vue';
-import ProductPage from '../pages/product.vue';
-import SettingsPage from '../pages/settings.vue';
+import HomePage from '../pages/home.jsx';
+import AboutPage from '../pages/about.jsx';
+import FormPage from '../pages/form.jsx';
+import CatalogPage from '../pages/catalog.jsx';
+import ProductPage from '../pages/product.jsx';
+import SettingsPage from '../pages/settings.jsx';
 
-import DynamicRoutePage from '../pages/dynamic-route.vue';
-import RequestAndLoad from '../pages/request-and-load.vue';
-import NotFoundPage from '../pages/404.vue';
+import DynamicRoutePage from '../pages/dynamic-route.jsx';
+import RequestAndLoad from '../pages/request-and-load.jsx';
+import NotFoundPage from '../pages/404.jsx';
 
 var routes = [
   {

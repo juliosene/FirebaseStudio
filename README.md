@@ -1,4 +1,4 @@
-# Firebase 7
+# Firebase7
 
 ## Framework7 CLI Options
 
@@ -11,14 +11,14 @@ Framework7 app created with following options:
     "pwa",
     "cordova"
   ],
-  "name": "Firebase 7",
-  "framework": "vue",
+  "name": "Firebase7",
+  "framework": "react",
   "template": "tabs",
   "bundler": "vite",
   "cssPreProcessor": false,
   "theming": {
     "customColor": true,
-    "color": "#32803a",
+    "color": "#294516",
     "darkMode": true,
     "iconFonts": true
   },
@@ -87,8 +87,8 @@ framework7 assets --ui
 ## Documentation & Resources
 
 * [Framework7 Core Documentation](https://framework7.io/docs/)
-* [Framework7 Vue Documentation](https://framework7.io/vue/)
 
+* [Framework7 React Documentation](https://framework7.io/react/)
 
 * [Framework7 Icons Reference](https://framework7.io/icons/)
 * [Community Forum](https://forum.framework7.io)
