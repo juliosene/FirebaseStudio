@@ -23,6 +23,12 @@ import {
   ListButton,
   BlockFooter
 } from 'framework7-react';
+import DashboardPage from '../pages/dashboard';
+import UserSetupPage from '../pages/user-setup';
+import AppSetupPage from '../pages/app-setup';
+import OpportunitiesPage from '../pages/opportunities';
+import AddOpportunityPage from '../pages/add-opportunity';
+import HomePage from '../pages/home';
 import cordovaApp from '../js/cordova-app';
 
 import routes from '../js/routes';
@@ -113,7 +119,13 @@ const MyApp = () => {
           </Toolbar>
 
           {/* Your main view/tab, should have "view-main" class. It also has "tabActive" prop */}
-          <View id="view-home" main tab tabActive url="/" />
+          <View id="view-home" main tab tabActive url="/dashboard/">
+ <Toolbar top>
+ <Link iconIos="f7:house_fill" iconMd="material:home" text="Home" href="/dashboard/"/>
+ <Link iconIos="f7:square_list_fill" iconMd="material:business_center" text="Opportunities" href="/opportunities/"/>
+ <Link iconIos="f7:chart_bar_fill" iconMd="material:assessment" text="Performance" href="/performance/"/>
+ </Toolbar>
+ </View>
 
           {/* Catalog View */}
           <View id="view-catalog" name="catalog" tab url="/catalog/" />
@@ -139,35 +151,6 @@ const MyApp = () => {
         </View>
       </Popup>
 
-      <LoginScreen id="my-login-screen">
-        <View>
-          <Page loginScreen>
-            <LoginScreenTitle>Login</LoginScreenTitle>
-            <List form>
-              <ListInput
-                type="text"
-                name="username"
-                placeholder="Your username"
-                value={username}
-                onInput={(e) => setUsername(e.target.value)}
-              ></ListInput>
-              <ListInput
-                type="password"
-                name="password"
-                placeholder="Your password"
-                value={password}
-                onInput={(e) => setPassword(e.target.value)}
-              ></ListInput>
-            </List>
-            <List>
-              <ListButton title="Sign In" onClick={() => alertLoginData()} />
-              <BlockFooter>
-                Some text about login information.<br />Click "Sign In" to close Login Screen
-              </BlockFooter>
-            </List>
-          </Page>
-        </View>
-      </LoginScreen>
     </App>
   )
 }

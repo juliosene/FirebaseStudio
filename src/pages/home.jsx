@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Page,
   Navbar,
@@ -11,48 +11,38 @@ import {
   Block,
   BlockTitle,
   List,
-  ListItem,
-  Button
+  ListInput,
+  Button,
+  f7
 } from 'framework7-react';
 
-const HomePage = () => (
-  <Page name="home">
+const HomePage = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    // In a real app, you would validate credentials here
+    console.log('Attempting login with:', username, password);
+    // For now, just navigate to the dashboard on button click
+    f7.views.main.router.navigate('/dashboard/');
+  };
+
+  return (
+    <Page noNavbar noToolbar noSwipeback loginScreen>
     {/* Top Navbar */}
-    <Navbar large sliding={false}>
-      <NavLeft>
-        <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="left" />
-      </NavLeft>
-      <NavTitle sliding>Firebase 7</NavTitle>
-      <NavRight>
-        <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="right" />
-      </NavRight>
-      <NavTitleLarge>Firebase 7</NavTitleLarge>
-    </Navbar>
-
     {/* Page content */}
-    <Block>
-      <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
-
-      <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
-    </Block>
-    <BlockTitle>Navigation</BlockTitle>
-    <List strong inset dividersIos>
-      <ListItem link="/about/" title="About"/>
-      <ListItem link="/form/" title="Form"/>
+    <BlockTitle>Login</BlockTitle>
+    <List form>
+      <ListInput type="text" name="username" placeholder="Your username" value={username} onInput={(e) => setUsername(e.target.value)}></ListInput>
+      <ListInput type="password" name="password" placeholder="Your password" value={password} onInput={(e) => setPassword(e.target.value)}></ListInput>
     </List>
-
-    <BlockTitle>Modals</BlockTitle>
-    <Block className="grid grid-cols-2 grid-gap">
-      <Button fill popupOpen="#my-popup">Popup</Button>
-      <Button fill loginScreenOpen="#my-login-screen">Login Screen</Button>
+    <Block>
+      <Button fill onClick={handleLogin}>Sign In</Button>
     </Block>
-
-    <BlockTitle>Panels</BlockTitle>
-    <Block className="grid grid-cols-2 grid-gap">
-      <Button fill panelOpen="left">Left Panel</Button>
-      <Button fill panelOpen="right">Right Panel</Button>
-    </Block>
-
+      </Page>
+  );
+};
+export default HomePage;
     <List strong inset dividersIos>
       <ListItem
         title="Dynamic (Component) Route"
@@ -67,6 +57,3 @@ const HomePage = () => (
         link="/request-and-load/user/123456/"
       />
     </List>
-  </Page>
-);
-export default HomePage;

@@ -1,6 +1,6 @@
 
+import LoginPage from '../pages/home.jsx';
 import HomePage from '../pages/home.jsx';
-import AboutPage from '../pages/about.jsx';
 import FormPage from '../pages/form.jsx';
 import CatalogPage from '../pages/catalog.jsx';
 import ProductPage from '../pages/product.jsx';
@@ -12,10 +12,6 @@ import NotFoundPage from '../pages/404.jsx';
 
 var routes = [
   {
-    path: '/',
-    component: HomePage,
-  },
-  {
     path: '/about/',
     component: AboutPage,
   },
@@ -26,6 +22,10 @@ var routes = [
   {
     path: '/catalog/',
     component: CatalogPage,
+  },
+  {
+    path: '/dashboard/',
+    component: DashboardPage,
   },
   {
     path: '/product/:id/',
@@ -86,6 +86,10 @@ var routes = [
         );
       }, 1000);
     },
+  },
+  {
+    path: '/',
+    component: HomePage,
   },
   {
     path: '(.*)',
