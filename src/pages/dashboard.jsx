@@ -22,10 +22,12 @@ const HomePage = () => (
       <NavRight>
         <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="right" />
       </NavRight>
-      <NavTitleLarge>Dashboard</NavTitleLarge>
+ <NavTitleLarge>Dashboard</NavTitleLarge>
     </Navbar>
-    <Block>Hello world</Block>
     {/* Page content */}
+ <Block><div>hello</div><div>world</div></Block>
+ {/* Page content */}
+ {/* Page content */}
     <div>
       hello
     </div>

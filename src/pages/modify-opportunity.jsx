@@ -5,9 +5,7 @@ const ModifyOpportunityPage = () => {
   return (
     <Page>
       <Navbar title="Modify Opportunity" />
-      <Block>
-        <p>This is the Modify an Opportunity page content.</p>
-      </Block>
+      <Block>Modify Opportunity Page</Block>
     </Page>
   );
 };

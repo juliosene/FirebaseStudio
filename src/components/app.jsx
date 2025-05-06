@@ -3,6 +3,9 @@ import { getDevice }  from 'framework7/lite-bundle';
 import {
   f7,
   f7ready,
+  NavLeft,
+  NavTitle,
+  NavTitleLarge,
   App,
   Panel,
   Views,
@@ -24,6 +27,13 @@ import {
   BlockFooter
 } from 'framework7-react';
 import DashboardPage from '../pages/dashboard';
+import LoginPage from '../pages/login';
+import OpportunitiesPage from '../pages/opportunities';
+import AddOpportunityPage from '../pages/add-opportunity';
+import ModifyOpportunityPage from '../pages/modify-opportunity';
+import PerformancePage from '../pages/performance';
+import MonthlyTargetPage from '../pages/monthly-target';
+import PerformanceReportPage from '../pages/performance-report';
 import cordovaApp from '../js/cordova-app';
 
 import routes from '../js/routes';
@@ -78,17 +88,16 @@ const MyApp = () => {
 
   return (
     <App { ...f7params }>
-
         {/* Left panel with cover effect*/}
         <Panel left cover dark>
           <View>
             <Page>
               <Navbar title="Menu"/>
               <List strongIos dividersIos outlineIos>
-                <ListItem link="/user-setup/" title="User Setup" view="#view-dashboard" panelClose icon="f7:person_fill"></ListItem>
-                <ListItem link="/app-setup/" title="App Setup" view="#view-dashboard" panelClose icon="f7:gear_fill"></ListItem>
-                <ListItem link="/opportunities-workflow/" title="Opportunities Workflow" view="#view-dashboard" panelClose icon="f7:list_task"></ListItem>
-                <ListItem link="/about-this-app/" title="About This App Page" view="#view-dashboard" panelClose></ListItem>
+                <ListItem link="/user-setup/" title="User Setup" panelClose icon="f7:person_fill"></ListItem>
+                <ListItem link="/app-setup/" title="App Setup" panelClose icon="f7:gear_fill"></ListItem>
+                <ListItem link="/opportunities-workflow/" title="Opportunities Workflow" panelClose icon="f7:list_task"></ListItem>
+                <ListItem link="/about-this-app/" title="About This App Page" panelClose></ListItem>
               </List>
               <Block>
                 Left Menu List
@@ -101,16 +110,26 @@ const MyApp = () => {
  {/* Views container */}
         <Views className="safe-areas">
 
- {/* Dashboard View */}
- <View id="view-dashboard" main url="/" >
+ {/* Login View */}
+ <View main url="/login/" className="ios-edges"/>
 
- {/* Top toolbar for main navigation */}
+ {/* Dashboard View */}
+ <View id="view-dashboard" main url="/dashboard/" >
  <Toolbar top>
             <Link iconIos="f7:house_fill" iconMd="material:home" text="Home" href="/dashboard/"/>
             <Link iconIos="f7:square_list_fill" iconMd="material:business_center" text="Opportunities" href="/opportunities/"/>
             <Link iconIos="f7:chart_bar_fill" iconMd="material:assessment" text="Performance" href="/performance/"/>
-          </Toolbar></View>
+ </Toolbar>
+ </View>
+ {/* Performance View */}
+ <View id="view-performance" url="/performance/">
 
+ <Toolbar top>
+            <Link iconIos="f7:house_fill" iconMd="material:home" text="Home" href="/dashboard/"/>
+            <Link iconIos="f7:square_list_fill" iconMd="material:business_center" text="Opportunities" href="/opportunities/"/>
+ <Link iconIos="f7:chart_bar_fill" iconMd="material:assessment" text="Performance" href="/performance/"/>
+ </Toolbar>
+ </View>
         </Views>
 
       <LoginScreen id="my-login-screen">

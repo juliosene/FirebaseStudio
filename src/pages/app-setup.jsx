@@ -2,15 +2,13 @@ jsx
 import React from 'react';
 import { Page, Navbar, Block } from 'framework7-react';
 
-const AppSetupPage = () => {
-  return (
-    <Page>
-      <Navbar title="App Setup" />
-      <Block>
-        <p>App Setup</p>
-      </Block>
-    </Page>
-  );
-};
+const AppSetupPage = () => (
+  <Page>
+    <Navbar title="App Setup" />
+    <Block>
+      <p>App Setup Page</p>
+    </Block>
+  </Page>
+);
 
 export default AppSetupPage;
