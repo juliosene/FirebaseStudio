@@ -1,68 +1,95 @@
 
+import HomePage from '../pages/home.jsx';
+import AboutPage from '../pages/about.jsx';
+import FormPage from '../pages/form.jsx';
+import CatalogPage from '../pages/catalog.jsx';
+import ProductPage from '../pages/product.jsx';
+import SettingsPage from '../pages/settings.jsx';
+
+import DynamicRoutePage from '../pages/dynamic-route.jsx';
+import RequestAndLoad from '../pages/request-and-load.jsx';
+import NotFoundPage from '../pages/404.jsx';
+
 var routes = [
- import OpportunitiesPage from '../pages/opportunities';
- import AddOpportunityPage from '../pages/add-opportunity';
- import ModifyOpportunityPage from '../pages/modify-opportunity';
- import NotFoundPage from '../pages/404.jsx';
- import LoginPage from '../pages/login';
- import DashboardPage from '../pages/dashboard';
-import PerformancePage from '../pages/performance';
- import UserSetupPage from '../pages/user-setup.jsx';
- import AppSetupPage from '../pages/app-setup.jsx';
- import OpportunitiesWorkflowPage from '../pages/opportunities-workflow.jsx';
- import AboutThisAppPage from '../pages/about-this-app.jsx';
-import MonthlyTargetPage from '../pages/monthly-target';
-import PerformanceReportPage from '../pages/performance-report';
   {
     path: '/',
-    component: DashboardPage,
+    component: HomePage,
   },
   {
-    path: '/login/',
-    component: LoginPage,
-  },
- {
-    path: '/dashboard/', component: DashboardPage,
+    path: '/about/',
+    component: AboutPage,
   },
   {
-    path: '/opportunities/',
-    component: OpportunitiesPage,
+    path: '/form/',
+    component: FormPage,
   },
   {
-    path: '/add-opportunity/',
-    component: AddOpportunityPage,
+    path: '/catalog/',
+    component: CatalogPage,
   },
   {
-    path: '/modify-opportunity/',
-    component: ModifyOpportunityPage,
-  },
- {
-    path: '/performance/',
- component: PerformancePage,
-  },
- {
-    path: '/monthly-target/',
- component: MonthlyTargetPage,
-  },
- {
-    path: '/performance-report/',
- component: PerformanceReportPage,
-  },
- {
-    path: '/user-setup/',
- component: UserSetupPage,
-  },
- {
-    path: '/app-setup/',
- component: AppSetupPage,
-  },
- {
-    path: '/opportunities-workflow/',
- component: OpportunitiesWorkflowPage,
+    path: '/product/:id/',
+    component: ProductPage,
   },
   {
-    path: '/about-this-app/',
- component: AboutThisAppPage,
+    path: '/settings/',
+    component: SettingsPage,
+  },
+
+  {
+    path: '/dynamic-route/blog/:blogId/post/:postId/',
+    component: DynamicRoutePage,
+  },
+  {
+    path: '/request-and-load/user/:userId/',
+    async: function ({ router, to, resolve }) {
+      // App instance
+      var app = router.app;
+
+      // Show Preloader
+      app.preloader.show();
+
+      // User ID from request
+      var userId = to.params.userId;
+
+      // Simulate Ajax Request
+      setTimeout(function () {
+        // We got user data from request
+        var user = {
+          firstName: 'Vladimir',
+          lastName: 'Kharlampidi',
+          about: 'Hello, i am creator of Framework7! Hope you like it!',
+          links: [
+            {
+              title: 'Framework7 Website',
+              url: 'http://framework7.io',
+            },
+            {
+              title: 'Framework7 Forum',
+              url: 'http://forum.framework7.io',
+            },
+          ]
+        };
+        // Hide Preloader
+        app.preloader.hide();
+
+        // Resolve route to load page
+        resolve(
+          {
+            component: RequestAndLoad,
+          },
+          {
+            props: {
+              user: user,
+            }
+          }
+        );
+      }, 1000);
+    },
+  },
+  {
+    path: '(.*)',
+    component: NotFoundPage,
   },
 ];
 

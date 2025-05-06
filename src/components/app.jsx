@@ -3,9 +3,6 @@ import { getDevice }  from 'framework7/lite-bundle';
 import {
   f7,
   f7ready,
-  NavLeft,
-  NavTitle,
-  NavTitleLarge,
   App,
   Panel,
   Views,
@@ -26,14 +23,6 @@ import {
   ListButton,
   BlockFooter
 } from 'framework7-react';
-import DashboardPage from '../pages/dashboard';
-import LoginPage from '../pages/login';
-import OpportunitiesPage from '../pages/opportunities';
-import AddOpportunityPage from '../pages/add-opportunity';
-import ModifyOpportunityPage from '../pages/modify-opportunity';
-import PerformancePage from '../pages/performance';
-import MonthlyTargetPage from '../pages/monthly-target';
-import PerformanceReportPage from '../pages/performance-report';
 import cordovaApp from '../js/cordova-app';
 
 import routes from '../js/routes';
@@ -46,10 +35,10 @@ const MyApp = () => {
   const device = getDevice();
   // Framework7 Parameters
   const f7params = {
-    name: 'Firebase7', // App name
+    name: 'Firebase 7', // App name
       theme: 'auto', // Automatic theme detection
       colors: {
-        primary: '#294516',
+        primary: '#36680d',
       },
       darkMode: true,
 
@@ -76,9 +65,12 @@ const MyApp = () => {
       },
   };
   const alertLoginData = () => {
+    f7.dialog.alert('Username: ' + username + '<br>Password: ' + password, () => {
+      f7.loginScreen.close();
+    });
   }
   f7ready(() => {
- // Init cordova APIs (see cordova-app.js)
+    // Init cordova APIs (see cordova-app.js)
     if (f7.device.cordova) {
       cordovaApp.init(f7);
     }
@@ -88,49 +80,64 @@ const MyApp = () => {
 
   return (
     <App { ...f7params }>
+
         {/* Left panel with cover effect*/}
         <Panel left cover dark>
           <View>
             <Page>
-              <Navbar title="Menu"/>
-              <List strongIos dividersIos outlineIos>
-                <ListItem link="/user-setup/" title="User Setup" panelClose icon="f7:person_fill"></ListItem>
-                <ListItem link="/app-setup/" title="App Setup" panelClose icon="f7:gear_fill"></ListItem>
-                <ListItem link="/opportunities-workflow/" title="Opportunities Workflow" panelClose icon="f7:list_task"></ListItem>
-                <ListItem link="/about-this-app/" title="About This App Page" panelClose></ListItem>
-              </List>
-              <Block>
-                Left Menu List
-              </Block>
+              <Navbar title="Left Panel"/>
+              <Block>Left panel content goes here</Block>
             </Page>
           </View>
         </Panel>
 
 
- {/* Views container */}
-        <Views className="safe-areas">
+        {/* Right panel with reveal effect*/}
+        <Panel right reveal dark>
+          <View>
+            <Page>
+              <Navbar title="Right Panel"/>
+              <Block>Right panel content goes here</Block>
+            </Page>
+          </View>
+        </Panel>
 
- {/* Login View */}
- <View main url="/login/" className="ios-edges"/>
 
- {/* Dashboard View */}
- <View id="view-dashboard" main url="/dashboard/" >
- <Toolbar top>
-            <Link iconIos="f7:house_fill" iconMd="material:home" text="Home" href="/dashboard/"/>
-            <Link iconIos="f7:square_list_fill" iconMd="material:business_center" text="Opportunities" href="/opportunities/"/>
-            <Link iconIos="f7:chart_bar_fill" iconMd="material:assessment" text="Performance" href="/performance/"/>
- </Toolbar>
- </View>
- {/* Performance View */}
- <View id="view-performance" url="/performance/">
+        {/* Views/Tabs container */}
+        <Views tabs className="safe-areas">
+          {/* Tabbar for switching views-tabs */}
+          <Toolbar tabbar icons bottom>
+            <Link tabLink="#view-home" tabLinkActive iconIos="f7:house_fill" iconMd="material:home" text="Home" />
+            <Link tabLink="#view-catalog" iconIos="f7:square_list_fill" iconMd="material:view_list" text="Catalog" />
+            <Link tabLink="#view-settings" iconIos="f7:gear" iconMd="material:settings" text="Settings" />
+          </Toolbar>
 
- <Toolbar top>
-            <Link iconIos="f7:house_fill" iconMd="material:home" text="Home" href="/dashboard/"/>
-            <Link iconIos="f7:square_list_fill" iconMd="material:business_center" text="Opportunities" href="/opportunities/"/>
- <Link iconIos="f7:chart_bar_fill" iconMd="material:assessment" text="Performance" href="/performance/"/>
- </Toolbar>
- </View>
+          {/* Your main view/tab, should have "view-main" class. It also has "tabActive" prop */}
+          <View id="view-home" main tab tabActive url="/" />
+
+          {/* Catalog View */}
+          <View id="view-catalog" name="catalog" tab url="/catalog/" />
+
+          {/* Settings View */}
+          <View id="view-settings" name="settings" tab url="/settings/" />
+
         </Views>
+
+      {/* Popup */}
+      <Popup id="my-popup">
+        <View>
+          <Page>
+            <Navbar title="Popup">
+              <NavRight>
+                <Link popupClose>Close</Link>
+              </NavRight>
+            </Navbar>
+            <Block>
+              <p>Popup content goes here.</p>
+            </Block>
+          </Page>
+        </View>
+      </Popup>
 
       <LoginScreen id="my-login-screen">
         <View>

@@ -1,4 +1,4 @@
-# Firebase7
+# Firebase 7
 
 ## Framework7 CLI Options
 
@@ -11,14 +11,14 @@ Framework7 app created with following options:
     "pwa",
     "cordova"
   ],
-  "name": "Firebase7",
+  "name": "Firebase 7",
   "framework": "react",
   "template": "tabs",
   "bundler": "vite",
   "cssPreProcessor": false,
   "theming": {
     "customColor": true,
-    "color": "#294516",
+    "color": "#36680d",
     "darkMode": true,
     "iconFonts": true
   },
@@ -33,7 +33,11 @@ Framework7 app created with following options:
     "plugins": [
       "cordova-plugin-statusbar",
       "cordova-plugin-keyboard",
-      "cordova-plugin-splashscreen"
+      "cordova-plugin-splashscreen",
+      "cordova-plugin-device",
+      "cordova-plugin-file",
+      "cordova-plugin-media",
+      "cordova-plugin-safariviewcontroller"
     ]
   }
 }

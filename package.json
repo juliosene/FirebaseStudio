@@ -1,8 +1,8 @@
 {
-  "name": "firebase7",
+  "name": "firebase-7",
   "private": true,
   "version": "1.0.0",
-  "description": "Firebase7",
+  "description": "Firebase 7",
   "repository": "",
   "license": "UNLICENSED",
   "scripts": {
