@@ -102,14 +102,14 @@ const MyApp = () => {
         <Views className="safe-areas">
 
  {/* Dashboard View */}
- <View id="view-dashboard" main url="/dashboard/" />
+ <View id="view-dashboard" main url="/" >
 
  {/* Top toolbar for main navigation */}
  <Toolbar top>
             <Link iconIos="f7:house_fill" iconMd="material:home" text="Home" href="/dashboard/"/>
             <Link iconIos="f7:square_list_fill" iconMd="material:business_center" text="Opportunities" href="/opportunities/"/>
             <Link iconIos="f7:chart_bar_fill" iconMd="material:assessment" text="Performance" href="/performance/"/>
-          </Toolbar>
+          </Toolbar></View>
 
         </Views>
 

@@ -25,7 +25,8 @@ const HomePage = () => (
     </Navbar>
 
     {/* Page content */}
-    <Block>
+    <Block><div>hello</div>
+    <div>world</div>
       Hello world
     </Block>
   </Page>

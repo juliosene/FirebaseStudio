@@ -24,8 +24,12 @@ const HomePage = () => (
       </NavRight>
       <NavTitleLarge>Dashboard</NavTitleLarge>
     </Navbar>
-<Block>Hello world</Block>
+    <Block>Hello world</Block>
     {/* Page content */}
+    <div>
+      hello
+    </div>
+    <div>world</div>
   </Page>
 );
 export default HomePage;
