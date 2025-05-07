@@ -1,11 +1,8 @@
-import React from 'react';
-import { Page, Navbar, Block, BlockTitle } from 'framework7-react';
-
-const AboutPage = () => (
-  <Page>
-    <Navbar title="About" backLink="Back" />
-    <BlockTitle>About My App</BlockTitle>
-    <Block>
+<template>
+  <f7-page name="about">
+    <f7-navbar title="About" back-link="Back"></f7-navbar>
+    <f7-block-title>About My App</f7-block-title>
+    <f7-block>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni molestiae laudantium
         dignissimos est nobis delectus nemo ea alias voluptatum architecto, amet similique, saepe
@@ -21,8 +18,6 @@ const AboutPage = () => (
         eligendi commodi deserunt doloribus inventore magni? Ea mollitia veniam nostrum nihil, iusto
         doloribus a at! Ea molestiae ullam delectus!
       </p>
-    </Block>
-  </Page>
-);
-
-export default AboutPage;
+    </f7-block>
+  </f7-page>
+</template>

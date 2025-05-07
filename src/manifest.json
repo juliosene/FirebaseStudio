@@ -1,12 +1,12 @@
 {
-  "name": "Firebase 7",
-  "short_name": "Firebase 7",
-  "description": "Firebase 7",
+  "name": "Test App",
+  "short_name": "Test App",
+  "description": "Test App",
   "lang": "en-US",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#36680d",
-  "theme_color": "#36680d",
+  "background_color": "#3e8327",
+  "theme_color": "#3e8327",
   "icons": [
     {
       "src": "/icons/128x128.png",

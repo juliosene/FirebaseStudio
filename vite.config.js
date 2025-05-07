@@ -1,6 +1,6 @@
 
 import path from 'path';
-import react from '@vitejs/plugin-react';
+import vue from '@vitejs/plugin-vue';
 
 import { createHtmlPlugin } from 'vite-plugin-html';
 
@@ -16,7 +16,7 @@ export default async () => {
 
   return  {
     plugins: [
-      react(),
+      vue({ template: { compilerOptions: { isCustomElement: (tag) => tag.includes('swiper-') } } }),,
       createHtmlPlugin({
         minify: false,
         inject: {

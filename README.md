@@ -1,4 +1,4 @@
-# Firebase 7
+# Test App
 
 ## Framework7 CLI Options
 
@@ -11,19 +11,19 @@ Framework7 app created with following options:
     "pwa",
     "cordova"
   ],
-  "name": "Firebase 7",
-  "framework": "react",
+  "name": "Test App",
+  "framework": "vue",
   "template": "tabs",
   "bundler": "vite",
   "cssPreProcessor": false,
   "theming": {
     "customColor": true,
-    "color": "#36680d",
+    "color": "#3e8327",
     "darkMode": true,
     "iconFonts": true
   },
   "customBuild": false,
-  "pkg": "io.framework7.myapp",
+  "pkg": "com.senesystems.testapp",
   "cordova": {
     "folder": "cordova",
     "platforms": [
@@ -34,10 +34,10 @@ Framework7 app created with following options:
       "cordova-plugin-statusbar",
       "cordova-plugin-keyboard",
       "cordova-plugin-splashscreen",
-      "cordova-plugin-device",
-      "cordova-plugin-file",
       "cordova-plugin-media",
-      "cordova-plugin-safariviewcontroller"
+      "cordova-plugin-file",
+      "cordova-plugin-inappbrowser",
+      "cordova-plugin-device"
     ]
   }
 }
@@ -91,8 +91,8 @@ framework7 assets --ui
 ## Documentation & Resources
 
 * [Framework7 Core Documentation](https://framework7.io/docs/)
+* [Framework7 Vue Documentation](https://framework7.io/vue/)
 
-* [Framework7 React Documentation](https://framework7.io/react/)
 
 * [Framework7 Icons Reference](https://framework7.io/icons/)
 * [Community Forum](https://forum.framework7.io)

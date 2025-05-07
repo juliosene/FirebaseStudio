@@ -4,19 +4,19 @@
     "pwa",
     "cordova"
   ],
-  "name": "Firebase 7",
-  "framework": "react",
+  "name": "Test App",
+  "framework": "vue",
   "template": "tabs",
   "bundler": "vite",
   "cssPreProcessor": false,
   "theming": {
     "customColor": true,
-    "color": "#36680d",
+    "color": "#3e8327",
     "darkMode": true,
     "iconFonts": true
   },
   "customBuild": false,
-  "pkg": "io.framework7.myapp",
+  "pkg": "com.senesystems.testapp",
   "cordova": {
     "folder": "cordova",
     "platforms": [
@@ -27,10 +27,10 @@
       "cordova-plugin-statusbar",
       "cordova-plugin-keyboard",
       "cordova-plugin-splashscreen",
-      "cordova-plugin-device",
-      "cordova-plugin-file",
       "cordova-plugin-media",
-      "cordova-plugin-safariviewcontroller"
+      "cordova-plugin-file",
+      "cordova-plugin-inappbrowser",
+      "cordova-plugin-device"
     ]
   }
 }
